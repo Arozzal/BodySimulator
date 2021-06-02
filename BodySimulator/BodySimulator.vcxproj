@@ -22,32 +22,32 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6D1B9AB5-07C8-40C8-95DB-9C0EBE631503}</ProjectGuid>
     <RootNamespace>BodySimulator</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -81,10 +81,15 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>Custom</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Sean\source\repos\BodySimulator\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sean\source\repos\BodySimulator\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,13 +113,67 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Sean\source\repos\BodySimulator\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-audio.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sean\source\repos\BodySimulator\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="BaseBody.cpp" />
+    <ClCompile Include="CellBody.cpp" />
+    <ClCompile Include="ClickManager.cpp" />
+    <ClCompile Include="CommandSelectMenu.cpp" />
+    <ClCompile Include="DefenderCell.cpp" />
+    <ClCompile Include="DoubleCommand.cpp" />
+    <ClCompile Include="EggBody.cpp" />
+    <ClCompile Include="extendedMath.cpp" />
+    <ClCompile Include="FoodBody.cpp" />
+    <ClCompile Include="FoodCell.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GetDefaultInterArrs.cpp" />
+    <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="GuiElement.cpp" />
+    <ClCompile Include="HarvesterCell.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PredatorCell.cpp" />
+    <ClCompile Include="SearchBody.cpp" />
+    <ClCompile Include="SingleCommand.cpp" />
+    <ClCompile Include="System.cpp" />
+    <ClCompile Include="WasteBody.cpp" />
+    <ClCompile Include="WasteCell.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bar.hpp" />
+    <ClInclude Include="BaseBody.hpp" />
+    <ClInclude Include="CellBody.hpp" />
+    <ClInclude Include="ClickManager.hpp" />
+    <ClInclude Include="CommandSelectMenu.hpp" />
+    <ClInclude Include="DefenderCell.hpp" />
+    <ClInclude Include="DoubleCommand.hpp" />
+    <ClInclude Include="EggBody.hpp" />
+    <ClInclude Include="extendedMath.hpp" />
+    <ClInclude Include="FoodBody.hpp" />
+    <ClInclude Include="FoodCell.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Gui.hpp" />
+    <ClInclude Include="GuiElement.hpp" />
+    <ClInclude Include="HarvesterCell.hpp" />
+    <ClInclude Include="Interpreter.hpp" />
+    <ClInclude Include="PredatorCell.hpp" />
+    <ClInclude Include="SearchBody.hpp" />
+    <ClInclude Include="SingleCommand.hpp" />
+    <ClInclude Include="System.hpp" />
+    <ClInclude Include="WasteBody.hpp" />
+    <ClInclude Include="WasteCell.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GetDefaultInterArrs.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
